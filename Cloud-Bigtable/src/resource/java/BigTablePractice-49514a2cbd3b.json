@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "bigtablepractice-237815",
+  "private_key_id": "49514a2cbd3b4bb3a057bb38b4b955d560f5170d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCxztxH/og6taNB\nFMWGV9/7CUdZ/2glhHrlubIUjdknP9D7RwfQiU9NxXFjrZLyar6F2/DfA1elBPBS\n9KooO1aTgp/wpZzdl5xBEXwc1qDd3gwzkLIcUUebGKy0xaoJ8r2NdBtEV06SGzcw\nqO1xD86qVqvILgw18xLFvDt/NMX/FMmxm58J97T0HVhe9/u5SIB7HOnr7mInQvUA\n91+Cf00tx+1DTqkZOQFx4qJ75J6iXze1RL9e44BP6RZlrDMZoCq9vhqYXcD3eZx3\nmbzI7P1tGMfARgVsJ27XQwrAhVq8zHiKAjuI3stm++i4MaNZpoIx/xu9S6KzqIkh\nYTzSZLT3AgMBAAECggEAKcKLudzt4dwHG6HlQkghMrRbLafureEPfCTAzlMCTVWP\nn3RvQWr+VSWqG98IRCcN2CJvz/DZBMjEKLeNvyUwkDR9m+dJkEGrURzqKVu/LFya\nQQIa0svEJYkGBu7loLCCFFbQkJxwt5/stmD2YzdzMk5oyfsGoyUTo50x3A5o8h9r\ne8jjidWBXosU3TGToNqai13N5W04/7N3DHoq7BwJTg3SR1Cm1xtNQyHJ1WHanF1T\n8jL+n2DHnYOsEecfPymLSkS100s4mVPL931ZQNL4Z8zxyWGniIYXLzzGifCib0NG\naRN+lsui0BfHIFTqDrZm0DYwB+j2oY+tX38SA2+qAQKBgQDcApi/IZmBscnruwy7\nd8iXvwFE9VEAKgCvDZEfrjbXustT1OFZFjdbEd6usiUR6EAbXy0THns05mNSrryN\n8xUyC/rxlJrhXIueUW+HcTzMGwut8RecKOeblmWAbJfcicHNsY1pUoYNItFZafRa\nnZLWb8n3P7My8V8eV1w+UfGfGQKBgQDO5PWUjXkoR/kn2ICGvDTxJq4eQb1XqX4J\nRzRc/0cJxaENGtGq5KJPHcTvJRiyi2t60GOATbkTjpcrI7kSry2oh/uTD3PoC44a\ns5ToM0suvxF3HAfPR9AQGr7XY4JPXYZQsbSPg1lhuvE5v6tIJGKdR1BILmkXxE+O\nMiDpK8xGjwKBgFnSJZJCoW01rH41C2mt6ZMqQ9ZnYP50J3tQSqNoeLNya3h6PNYm\nH8tqbENeL4w0CZgjLz/S/fIG7R3ggNJjH5AjG/xs8x52rfmgvavKK0wY7pfBCiaS\n/JuktyPLMeSzyQ+1IUqSim/qexXKEBy+oCgz03zB4OM3b+HvQJWg1shhAoGAGNXd\nMO7mm1JAc2sGyqWvCT+maRVlIC/FZGG6xGsUYPTrR0Jv5r65SRv+tuJSG6Smy0BW\noWEzFUjplpEcN0T2CyP/rACP3kv8y/HArzrxDHR9KTohKd2p+TTssbhNPS+x3t/m\nF9Ahm5ywNkluyyMq/0w/M9r2XJcBIcWcs8DBLbsCgYAx2CAmjepZ9hUSVEH0QPBs\nxOLV7yIC+o6BNglK73JxZXK2A8Jmjeju5U1mZh5m1B4Kf5bvMJ24RdilUWO/fqKJ\nkck2ARwJIvDpRHKfQRRbegbGN72CD0C5sFU3xPNEhT6I6U5DOvpg1HxnN3m7/F2L\nkqtUJBzpWTUcq4j/PX2ZvQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bigtabledemo@bigtablepractice-237815.iam.gserviceaccount.com",
+  "client_id": "100282748139964999098",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigtabledemo%40bigtablepractice-237815.iam.gserviceaccount.com"
+}
+
