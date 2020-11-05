@@ -12,24 +12,26 @@ import com.infometry.pubsub.PubSubConnection;
 
 public class ListTopicSubscription {
 
-	public static void main(String[] args) throws IOException 
-	{
+	public static void main(String[] args) throws IOException {
+
 		//String projectId = ServiceOptions.getDefaultProjectId();
 		CredentialsProvider credProvider=PubSubConnection.getCredentials();
 		String projectId=PubSubConnection.getProjectId();
-		String topicId="Spring";
-		
+		//String topicname="projects/inf-pubsub/topics/Ribbon";
+		String topicId = "Ribbon";
+
 		try (TopicAdminClient topicAdminClient = TopicAdminClient.create(TopicAdminSettings.newBuilder().setCredentialsProvider(credProvider).build()))
 		{
 			ProjectTopicName topicName=ProjectTopicName.of(projectId, topicId);
+
 			ListTopicSubscriptionsRequest listTopicsRequest = ListTopicSubscriptionsRequest.newBuilder()
 					.setTopic(topicName.toString()).build();
 			ListTopicSubscriptionsPagedResponse response = topicAdminClient.listTopicSubscriptions(listTopicsRequest);
-			Iterable<String> topics = response.iterateAll();
-			for (String topic : topics) {
-			System.out.println(topic.toString());
+			Iterable<String> subscriptionsList = response.iterateAll();
+			for (String subscription : subscriptionsList) {
+				System.out.println(subscription.toString());
+			} 
 		} 
-	   } 
 		catch (ApiException e) {
 			// example : code = ALREADY_EXISTS(409) implies topic already exists
 			System.out.print(e.getStatusCode().getCode());

@@ -7,7 +7,6 @@ import java.util.List;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
-import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.infometry.pubsub.PubSubConnection;

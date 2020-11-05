@@ -4,16 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.cloud.pubsub.v1.MessageReceiver;
-import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.cloud.pubsub.v1.SubscriptionAdminSettings;
-import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Duration;
 import com.google.pubsub.v1.ExpirationPolicy;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
-import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.PushConfig.OidcToken;
 import com.google.pubsub.v1.Subscription;
@@ -66,8 +62,6 @@ public class CreateSubscriptionAndConsumeMessages {
 	}
 
 	public static void main(String... args) throws Exception {
-
 		createSubscription();
-
 	}
 }

@@ -12,19 +12,13 @@ import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 
 public class PublisherExample {
-
-	// use the default project id
 	
-
-	/** Publish messages to a topic.
-	 * @param args topic name, number of messages
-	 */
 	public static void main(String... args) throws Exception {
 		
 		CredentialsProvider credProvider=PubSubConnection.getCredentials();
 		String projectId=PubSubConnection.getProjectId();
 		// topic id, eg. "my-topic"
-		String topicId = "DemoTopic";
+		String topicId = "Ribbon";
 		//int messageCount = Integer.parseInt(args[1]);
 		ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
 		Publisher publisher = null;
@@ -37,7 +31,8 @@ public class PublisherExample {
 			for (int i = 0; i < 2; i++) {
 				String message = "message-" + i;
 
-				// convert message to bytes
+				//convert message to bytes
+				
 				ByteString data = ByteString.copyFromUtf8(message);
 				PubsubMessage pubsubMessage = PubsubMessage.newBuilder()
 						.setData(data)
@@ -46,6 +41,7 @@ public class PublisherExample {
 				// Schedule a message to be published. Messages are automatically batched.
 				ApiFuture<String> future = publisher.publish(pubsubMessage);
 				futures.add(future);
+				
 			}
 		} finally {
 			// Wait on any pending requests

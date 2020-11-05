@@ -1,6 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.info.google</groupId>
@@ -14,6 +15,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
 
 	<build>
 		<finalName>idqMdm</finalName>
@@ -32,16 +34,7 @@
 	</build>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.google.cloud.bigtable/bigtable-hbase-1.x -->
-
+		
 		<dependency>
 			<groupId>com.google.cloud.bigtable</groupId>
 			<artifactId>bigtable-hbase-1.x</artifactId>
@@ -53,38 +46,36 @@
 				</exclusion>
 			</exclusions> -->
 		</dependency>
-
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.apache.hbase</groupId> -->
-<!-- 			<artifactId>hbase-shaded-client</artifactId> -->
-<!-- 			<version>2.2.3</version> -->
-<!-- 		</dependency> -->
-
+		
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-shaded-client</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>com.google.cloud</groupId>
 			<artifactId>google-cloud-storage</artifactId>
 			<version>1.70.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
-		<!--https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-jdk16 -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.bouncycastle</groupId> -->
-		<!-- <artifactId>bcprov-ext-jdk16</artifactId> -->
-		<!-- <version>1.46</version> -->
-		<!-- </dependency> -->
-
-		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-ext-jdk15on -->
+		
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-ext-jdk16</artifactId>
+			<version>1.46</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-ext-jdk15on</artifactId>
 			<version>1.60</version>
 		</dependency>
-
 
 	</dependencies>
 </project>

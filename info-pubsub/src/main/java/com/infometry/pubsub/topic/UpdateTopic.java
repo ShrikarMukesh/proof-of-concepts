@@ -2,17 +2,12 @@ package com.infometry.pubsub.topic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.google.api.gax.core.CredentialsProvider;
-import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
-import com.google.common.collect.Iterables;
 import com.google.protobuf.FieldMask;
 import com.google.pubsub.v1.MessageStoragePolicy;
 import com.google.pubsub.v1.ProjectTopicName;

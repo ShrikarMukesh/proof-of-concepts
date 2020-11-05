@@ -1,17 +1,13 @@
 package com.infometry.pubsub.topic;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.TopicAdminClient.ListTopicSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.v1.TopicAdminSettings;
-import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ProjectTopicName;
-import com.google.pubsub.v1.Subscription;
 import com.infometry.pubsub.PubSubConnection;
 
 public class TopicSubscriptionList {

@@ -26,6 +26,5 @@ public class DeleteEntireRow {
 			
 			e.printStackTrace();
 		}
-		
 	}
 }

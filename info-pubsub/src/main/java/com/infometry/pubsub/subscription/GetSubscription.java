@@ -9,18 +9,22 @@ import com.google.pubsub.v1.Subscription;
 import com.infometry.pubsub.PubSubConnection;
 public class GetSubscription {
 	public static void main(String... args) throws Exception {
+		
 		CredentialsProvider credentialsProvider = PubSubConnection.getCredentials();
+		
 		String projectId = PubSubConnection.getProjectId();
-		String subscriptionId = "withAll";
+		String subscriptionId = "Zuul";
+		
 		ProjectSubscriptionName subscription = ProjectSubscriptionName.of(projectId, subscriptionId);
 		try {
 			SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient
 					.create(SubscriptionAdminSettings.newBuilder().setCredentialsProvider(credentialsProvider).build());
 			Subscription r = subscriptionAdminClient.getSubscription(subscription);
 			System.out.println(r);
-			System.out.println(r.getPushConfig().getAttributesCount());
+			//System.out.println(r.getPushConfig().getAttributesCount());
 		} 
 		catch (ApiException e) {
+			e.getMessage();
 		}
 	}
 }

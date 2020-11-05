@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/commons-beanutils-1.9.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/commons-collections-3.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/commons-lang3-3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/commons-text-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/AI/POC/Jars/opencsv-4.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

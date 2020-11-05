@@ -21,6 +21,7 @@ public class DeleteComment {
 	private static String clientSecret = "client_secret_1.json";
 	
 	public static void main(String []args){
+		@SuppressWarnings("static-access")
 		Credential credential = DriveCredential.getDriveCredentialObject().getCredential(scopes, credentialLoc, clientSecret);
 		Drive drive = new Drive.Builder(credential.getTransport(), credential.getJsonFactory(), credential).setApplicationName(APPLICATION_NAME).build();
 		Files files = drive.files();
