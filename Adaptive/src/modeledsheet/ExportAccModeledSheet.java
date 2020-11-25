@@ -1,35 +1,29 @@
-package infometry;
+package modeledsheet;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class ExportDataRequest {
+public class ExportAccModeledSheet {
 	public static void main(String[] args) throws Exception {
 		sendResponse();
 	}
 	public static String sendResponse() throws Exception {
-
-		String request = "<?xml version='1.0' encoding='UTF-8'?>\r\n" + 
-				"<call method=\"exportData\" callerName=\"EDW\">\r\n" + 
-				"    <credentials login=\"hailawadi@guidewire2.com\" password=\"Welcome@123\" instanceCode=\"GUIDEWIRE2\"/>\r\n" + 
-				"    <version isDefault=\"true\"/>\r\n" + 
-				"    <format useInternalCodes=\"true\" includeUnmappedItems=\"true\" />\r\n" + 
-				"    <filters>\r\n" + 
-				"        <accounts>\r\n" + 
-				"            <account code=\"Personnel.Headcount\" isAssumption=\"false\" includeDescendants=\"false\"/>\r\n" + 
-				"        </accounts>\r\n" + 
-				"        <levels>\r\n" + 
-				"            <level name=\"Total Entity\" isRollup=\"true\" includeDescendants=\"false\"/>\r\n" + 
-				"        </levels>\r\n" + 
-				"        <timeSpan start=\"01/2020\" end=\"03/2020\"/>\r\n" + 
-				"    </filters>\r\n" + 
-				"    <dimensions>\r\n" + 
-				"        <dimension name=\"Workday Function\"/>\r\n" + 
-				"        <dimension name=\"Home Department\" />\r\n" + 
-				"        <dimension name=\"Location\" />\r\n" + 
-				"    </dimensions>\r\n" + 
-				"</call>";
-
+        
+		String request1 = "<?xml version='1.0' encoding='UTF-8'?>\r\n" + 
+				"<call method=\"exportAccounts\" callerName=\"Informatica cloud\">\r\n" + 
+				"    <credentials login=\"zoby.shaikh@su.org\" password=\"welcome\"/>\r\n" + 
+				"    <include versionName=\"2020 COP\"/>\r\n" + 
+				"    <sheet id=\"321\" />\r\n" + 
+				"</call>\r\n" + 
+				"";
+		
+       String request = "<?xml version='1.0' encoding='UTF-8'?>\r\n" + 
+       		"<call method=\"exportAccounts\" callerName=\"Informatica cloud\">\r\n" + 
+       		"    <credentials login=\"zoby.shaikh@su.org\" password=\"welcome\"/>\r\n" + 
+       		"    <include versionName=\"July'19 Fcst v2\"/>\r\n" + 
+       		"    <sheet id=\"344\" />\r\n" + 
+       		"</call>\r\n" + 
+       		"";
 		// Make a URL connection to the Adaptive Planning web service URL
 		URL url = new URL("https://api.adaptiveinsights.com/api/v18");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -44,7 +38,7 @@ public class ExportDataRequest {
 
 		// Read the response
 		String response = readResponse(conn);
-		//System.out.println(response);
+		System.out.println(response);
 		return response;
 	}
 	private static void writeRequest(HttpURLConnection conn, String request) throws Exception {

@@ -69,7 +69,7 @@ public class Get_IDs {
 							}
 							else {
 								//System.err.println("Outer Account Name: "  + inerElement.getAttribute("name"));
-								
+
 								innerMethod(innernode.getChildNodes(),accountsList);
 							}
 						}
@@ -77,14 +77,10 @@ public class Get_IDs {
 				}
 			}
 
-		} catch (ParserConfigurationException e) {
-
-		} catch (SAXException e) {
-
-		} catch (IOException e) {
-
+		} catch (ParserConfigurationException |SAXException | IOException e) {
+			e.printStackTrace();
 		}
-		
+
 		Stream<String> filter = accountsList.stream().filter(string -> !string.isEmpty());
 		accountsList = filter.collect(Collectors.toList());		
 		return accountsList;

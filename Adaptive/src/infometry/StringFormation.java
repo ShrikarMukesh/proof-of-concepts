@@ -3,7 +3,6 @@ package infometry;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -51,43 +50,35 @@ public class StringFormation {
 					CDATASection sec = (CDATASection) node;
 					String str = sec.getData();
 					StringTokenizer tokens = new StringTokenizer(str, "\n");
-
+					
 					while (tokens.hasMoreTokens()) {
-
-						String lineString = tokens.nextToken();
-		
-						StringBuilder sb = new StringBuilder();
-						List<String> arrList = new ArrayList<>();
-
-						for(int m=0;m<lineString.length();m++) {
-
-							if(lineString.charAt(m) != ',') {			
-								sb.append(lineString.charAt(m));
-							}
-							else {
-								if(m -1 >= 0 && m+1<lineString.length() -1) {
-
-									if(lineString.charAt(m-1) != '"' && lineString.charAt(m+1) != '"' ) {
-
-										sb.append(lineString.charAt(m));
+						List<String> arrayList = new ArrayList<>();
+						String token = tokens.nextToken();
+						String splittedToken[] = token.split("\"");
+						for (int k = 0; k < splittedToken.length; k ++) {
+							String temp = splittedToken[k];
+							temp = temp.trim();
+							if (!temp.isEmpty()) {
+								
+								if (temp.startsWith(",") || temp.endsWith(",")) {
+									
+									String[] comSepValues = temp.split(",");
+									for (int l = 0; l < comSepValues.length; l ++) {
+										String trimmedVal = comSepValues[l].trim();
+										if (!trimmedVal.isEmpty()) {
+											arrayList.add(comSepValues[l]);
+										}
+										
 									}
-									else {
-										arrList.add(sb.toString());
-										sb = new StringBuilder();
-									}
+									
 								}
-
-							}
-							if(m == lineString.length() -1) {
-
-								String lastValue = sb.toString();
-								lastValue = lastValue.replace("=NA()*", "");
-
-								String[] lastArray = lastValue.split(",");
-								arrList.addAll(Arrays.asList(lastArray));
+								else {
+									arrayList.add(temp);
+								}								
 							}
 						}
-						arrList.forEach((p)->System.out.print(p+"/"));
+						
+						arrayList.forEach((p)->System.out.print(p+"  "));
 						System.out.println();
 					}
 					

@@ -2,19 +2,20 @@ package accounts;
 
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.w3c.dom.Element;
 
 public class GetAccountsId {
 
@@ -38,10 +39,8 @@ public class GetAccountsId {
 			builder = factory.newDocumentBuilder();
 			is = new InputSource(new StringReader(xml));
 			Document doc = builder.parse(is);
-			NodeList list = doc.getElementsByTagName("account");
-			/*
-			 * Outer accounts
-			 */
+			NodeList list = doc.getElementsByTagName("accounts");
+
 			NodeList nodes = list.item(0).getChildNodes();
 			for (int i = 0; i < nodes.getLength(); i ++) {
 
@@ -54,11 +53,9 @@ public class GetAccountsId {
 					String flag = eElement.getAttribute("code");
 
 					accountsList.add(flag);
-					totalAccountsID++;
-					/*
-					 * Inner accounts
-					 */
+					//totalAccountsID++;
 
+					//Inner accounts
 					NodeList childNodes = node.getChildNodes();
 					for (int z = 0; z < childNodes.getLength(); z ++) {
 
@@ -70,9 +67,9 @@ public class GetAccountsId {
 							String counter = inerElement.getAttribute("code");
 							accountsList.add(counter);
 							totalAccountsID++;
-							/*
-							 * Nested inner
-							 */
+
+							// Nested inner
+
 							NodeList nestedNodes = innernode.getChildNodes();
 							for (int m = 0; m < nestedNodes.getLength(); m ++) {
 
@@ -87,7 +84,6 @@ public class GetAccountsId {
 
 								}
 							}
-
 						}
 					}
 
@@ -98,9 +94,11 @@ public class GetAccountsId {
 			e.printStackTrace();
 		} 
 
-		Stream<String> filter = accountsList.stream().filter(string -> !string.isEmpty());
-		filter.forEach((k) -> System.out.println("This is accont code = "+ k));
+		accountsList = accountsList.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+		accountsList.forEach((k) -> System.out.println("This is accont code = "+ k));
+		
 		System.out.println(totalAccountsID);
+		
 		return accountsList;
 	}
 
