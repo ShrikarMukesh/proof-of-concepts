@@ -9,24 +9,24 @@ public class ExportDataRequest {
 	}
 	public static String sendResponse() throws Exception {
 
-		String request = "<?xml version='1.0' encoding='UTF-8'?>\r\n" + 
-				"<call method=\"exportData\" callerName=\"EDW\">\r\n" + 
-				"    <credentials login=\"hailawadi@guidewire2.com\" password=\"Welcome@123\" instanceCode=\"GUIDEWIRE2\"/>\r\n" + 
-				"    <version isDefault=\"true\"/>\r\n" + 
-				"    <format useInternalCodes=\"true\" includeUnmappedItems=\"true\" />\r\n" + 
+		String request = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n" + 
+				"<call callerName=\"Informatica Adaptive Insights connector\" method=\"exportData\">\r\n" + 
+				"    <credentials instanceCode=\"GUIDEWIRE2\" login=\"hailawadi@guidewire2.com\" password=\"Welcome@123\"/>\r\n" + 
+				"    <version isDefault=\"false\"/>\r\n" + 
+				"    <format includeUnmappedItems=\"false\" useInternalCodes=\"true\"/>\r\n" + 
 				"    <filters>\r\n" + 
 				"        <accounts>\r\n" + 
-				"            <account code=\"Personnel.Headcount\" isAssumption=\"false\" includeDescendants=\"false\"/>\r\n" + 
+				"            <account code=\"Personnel.Headcount\" includeDescendants=\"false\" isAssumption=\"false\"/>\r\n" + 
 				"        </accounts>\r\n" + 
 				"        <levels>\r\n" + 
-				"            <level name=\"Total Entity\" isRollup=\"true\" includeDescendants=\"false\"/>\r\n" + 
+				"            <level includeDescendants=\"true\" isRollup=\"true\" name=\"Total Entity\"/>\r\n" + 
 				"        </levels>\r\n" + 
-				"        <timeSpan start=\"01/2020\" end=\"03/2020\"/>\r\n" + 
+				"        <timeSpan end=\"08/2020\" start=\"01/2020\"/>\r\n" + 
 				"    </filters>\r\n" + 
 				"    <dimensions>\r\n" + 
 				"        <dimension name=\"Workday Function\"/>\r\n" + 
-				"        <dimension name=\"Home Department\" />\r\n" + 
-				"        <dimension name=\"Location\" />\r\n" + 
+				"        <dimension name=\"Home Department\"/>\r\n" + 
+				"        <dimension name=\"Location\"/>\r\n" + 
 				"    </dimensions>\r\n" + 
 				"</call>";
 
@@ -44,7 +44,7 @@ public class ExportDataRequest {
 
 		// Read the response
 		String response = readResponse(conn);
-		//System.out.println(response);
+		System.out.println(response);
 		return response;
 	}
 	private static void writeRequest(HttpURLConnection conn, String request) throws Exception {

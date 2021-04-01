@@ -46,7 +46,7 @@ public class GetAccountCodes {
 				Node item = list.item(i);
 				Element eElement = (Element) item;
 				
-				String flag = eElement.getAttribute("isAssumption");
+				String flag = eElement.getAttribute("code");
 				
 				accountsList.add(flag);
 				totalAccountsID++;

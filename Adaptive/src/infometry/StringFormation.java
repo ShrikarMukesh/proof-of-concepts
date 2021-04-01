@@ -21,7 +21,7 @@ public class StringFormation {
 
 		String j = ExportDataRequest.sendResponse();
 		String xml= j;
-
+		//System.out.println(xml);
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
 		DocumentBuilder builder;
@@ -50,7 +50,7 @@ public class StringFormation {
 					CDATASection sec = (CDATASection) node;
 					String str = sec.getData();
 					StringTokenizer tokens = new StringTokenizer(str, "\n");
-					
+
 					while (tokens.hasMoreTokens()) {
 						List<String> arrayList = new ArrayList<>();
 						String token = tokens.nextToken();
@@ -59,29 +59,29 @@ public class StringFormation {
 							String temp = splittedToken[k];
 							temp = temp.trim();
 							if (!temp.isEmpty()) {
-								
+
 								if (temp.startsWith(",") || temp.endsWith(",")) {
-									
+
 									String[] comSepValues = temp.split(",");
 									for (int l = 0; l < comSepValues.length; l ++) {
 										String trimmedVal = comSepValues[l].trim();
 										if (!trimmedVal.isEmpty()) {
 											arrayList.add(comSepValues[l]);
 										}
-										
+
 									}
-									
+
 								}
 								else {
 									arrayList.add(temp);
 								}								
 							}
 						}
-						
+
 						arrayList.forEach((p)->System.out.print(p+"  "));
 						System.out.println();
 					}
-					
+
 				}
 			}
 		} catch (ParserConfigurationException e) {

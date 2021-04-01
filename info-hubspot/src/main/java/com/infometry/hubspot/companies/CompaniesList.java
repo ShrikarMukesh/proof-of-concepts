@@ -1,4 +1,4 @@
-package com.infometry.hubsopt.contacts;
+package com.infometry.hubspot.companies;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONObject;
@@ -9,9 +9,9 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
 
-public class ContactsList {
+public class CompaniesList {
 
-	static String uri = "https://api.hubapi.com/crm/v3/objects/contacts";
+	static String uri = "https://api.hubapi.com/crm/v3/objects/companies";
 	static Client client = Client.create();
 	static ClientResponse response = null;
 	static JSONArray jsonArrayMain =  new JSONArray();
@@ -24,7 +24,7 @@ public class ContactsList {
 
 		WebResource webResource =client.resource(uri);
 		MultivaluedMapImpl params = new MultivaluedMapImpl();
-		params.add("limit", "100");
+		params.add("limit", "10");
 		//		params.add("properties", "");
 
 		response = webResource.queryParams(params).header("Accept", "application/json")

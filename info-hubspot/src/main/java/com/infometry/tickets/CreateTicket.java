@@ -1,4 +1,4 @@
-package com.infometry.hubspot.companies;
+package com.infometry.tickets;
 
 import javax.ws.rs.core.MediaType;
 
@@ -8,26 +8,24 @@ import com.infometry.hubspot.HubspotConn;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 
-public class CreateCompany {
-
-	public static void main(String[] args)throws Exception {
+public class CreateTicket {
+	public static void main(String[] args) throws Exception {
+		
 		String token = HubspotConn.refreshAccessToken();
 		JSONObject j = new JSONObject();
 		JSONObject ja = new JSONObject();
 		
-		j.put("name", "Fitst");
-		j.put("annualrevenue", "5000000000");
-		j.put("city", "bengaluru");
-		j.put("country", "India");
-		j.put("description", "business intelligence");
-		j.put("industry", "java");
-		j.put("numberofemployees", "102");
-		j.put("phone", "743897343");
-		j.put("zip", "433221");
-		j.put("state", "kr");
+		j.put("hubspot_owner_id", "49925146");
+		j.put("hs_pipeline", "0");
+		j.put("hs_pipeline_stage", "1");
+		j.put("hs_ticket_category", new String());
+		j.put("hs_ticket_priority", "HIGH");
+		j.put("subject", "troubleshoot report");
+
 		ja.put("properties", j);
+		System.out.println(ja);
 		
-		String uri = "https://api.hubapi.com/crm/v3/objects/companies";
+		String uri = "https://api.hubapi.com/crm/v3/objects/tickets";
 		Client client = Client.create();
 		
 //		WebResource webResource =client.resource(uri);

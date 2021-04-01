@@ -5,7 +5,6 @@ import org.codehaus.jettison.json.JSONObject;
 
 public class json {
 
-	
 	public static void main(String[] args) throws JSONException {
 		JSONObject json = new JSONObject(); 
 

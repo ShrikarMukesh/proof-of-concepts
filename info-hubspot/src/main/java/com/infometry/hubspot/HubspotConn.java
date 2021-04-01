@@ -30,9 +30,9 @@ public class HubspotConn {
 		MultivaluedMapImpl params = new MultivaluedMapImpl();
 		
 		params.add("grant_type", "refresh_token");
-		params.add("client_id", "18a75f5b-4d02-4d04-849d-60bf4ed079eb");
-		params.add("client_secret", "ad298ead-5a03-490b-9e49-d4e0e24cc65d");
-		params.add("refresh_token", "18f2430e-b379-445c-b6e3-791dcf5bb154");
+		params.add("client_id", "557344b5-71a7-41be-a9a4-f4ef9e04316e");
+		params.add("client_secret", "77f15274-b8e6-4b7b-a26b-fac33f4c8042");
+		params.add("refresh_token", "ddab9d1b-cfc6-4322-8b9c-8b1ca746c1d9");
 
 		ClientResponse resp = webresource.post(ClientResponse.class, params);
 		
